@@ -16,7 +16,7 @@ build:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
     - {{ PYTHON }} setup.py install
-    - scons man html-github
+    - scons man html
     - {{ PYTHON }} package_documentation.py
   ignore_run_exports:
     - python_abi
