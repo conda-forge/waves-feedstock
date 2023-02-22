@@ -152,4 +152,5 @@ Feedstock Maintainers
 =====================
 
 * [@kbrindley](https://github.com/kbrindley/)
+* [@Prabhu-LANL](https://github.com/Prabhu-LANL/)
 
