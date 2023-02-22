@@ -38,12 +38,13 @@ requirements:
     - python >=3.8
     - h5netcdf
     - h5py
+    - matplotlib
+    - networkx
     - numpy
     - pyyaml
     - salib >=1
     - scipy >=1.7
     - scons
-    - setuptools
     - xarray
 
 test:
