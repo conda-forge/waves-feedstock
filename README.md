@@ -1,11 +1,11 @@
-About waves
-===========
+About waves-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/waves-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/lanl/waves
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/waves-feedstock/blob/main/LICENSE.txt)
 
 Summary: Parameteric study computational engineering workflow tool
 
@@ -151,6 +151,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@kbrindley](https://github.com/kbrindley/)
 * [@Prabhu-LANL](https://github.com/Prabhu-LANL/)
+* [@kbrindley](https://github.com/kbrindley/)
 

@@ -1,5 +1,5 @@
 {% set name = "waves" %}
-{% set version = "0.6.12" %}
+{% set version = "0.6.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lanl/waves/archive/refs/tags/{{ version }}.tar.gz
-  sha256: adc5d62b93b7179dc5d740a6e6dad6ece157307d8acccd4fd833142e7103b494
+  sha256: d646f72317f7f587cf3759043bf2aa1f9c2b18ef3b94eae29f022069d33066e7
 
 build:
   noarch: python
