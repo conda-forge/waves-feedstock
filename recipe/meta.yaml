@@ -1,5 +1,5 @@
 {% set name = "waves" %}
-{% set version = "0.6.18" %}
+{% set version = "0.6.19" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lanl/waves/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 4059e89a8e0b5ee6ce6196600810b4d4b50f6ce16efd3858ad2d10d0c65f308c
+  sha256: e3eaa1fedcd20f83d1e71ea905ce369cb309a85b3aa4e0462aba11f5d9632f44
 
 build:
   noarch: python
@@ -15,17 +15,16 @@ build:
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
-    - {{ PYTHON }} setup.py install
+    - $PYTHON -m build --no-isolation
+    - $PYTHON -m pip install dist/$PKG_NAME-$PKG_VERSION.tar.gz --no-deps --ignore-installed -v --no-build-isolation
     - scons man html
-    - {{ PYTHON }} package_documentation.py
+    - $PYTHON package_documentation.py
   ignore_run_exports:
     - python_abi
 
 requirements:
   build:
     - scons >=4
-    - setuptools >=45
-    - setuptools_scm[toml] >=6.2
     - sphinx >=5.1
     - sphinx-argparse
     - sphinx-copybutton >=0.5.1
@@ -33,6 +32,8 @@ requirements:
     - sphinxcontrib-bibtex
   host:
     - python
+    - build
+    - pip
     - setuptools >=45
     - setuptools_scm[toml] >=6.2
   run:
