@@ -15,17 +15,16 @@ build:
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
-    - {{ PYTHON }} setup.py install
+    - $PYTHON -m build --no-isolation
+    - $PYTHON -m pip install dist/$PKG_NAME-$PKG_VERSION.tar.gz --no-deps --ignore-installed -v --no-build-isolation
     - scons man html
-    - {{ PYTHON }} package_documentation.py
+    - $PYTHON package_documentation.py
   ignore_run_exports:
     - python_abi
 
 requirements:
   build:
     - scons >=4
-    - setuptools >=45
-    - setuptools_scm[toml] >=6.2
     - sphinx >=5.1
     - sphinx-argparse
     - sphinx-copybutton >=0.5.1
@@ -33,6 +32,8 @@ requirements:
     - sphinxcontrib-bibtex
   host:
     - python
+    - build
+    - pip
     - setuptools >=45
     - setuptools_scm[toml] >=6.2
   run:
