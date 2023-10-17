@@ -154,6 +154,3 @@ Feedstock Maintainers
 * [@Prabhu-LANL](https://github.com/Prabhu-LANL/)
 * [@kbrindley](https://github.com/kbrindley/)
 
-
-<!-- dummy commit to enable rerendering -->
-
