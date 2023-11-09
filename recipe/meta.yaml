@@ -30,17 +30,18 @@ requirements:
     - sphinx-copybutton >=0.5.1
     - sphinx_rtd_theme >=1
     - sphinxcontrib-bibtex
+    - setuptools_scm[toml] >=6.2,<8
   host:
     - python
     - python-build
     - pip
-    - setuptools >=45
-    - setuptools_scm[toml] >=6.2
+    - setuptools >=62
+    - setuptools_scm[toml] >=6.2,<8
   run:
     - python >=3.8
     - h5netcdf
     - h5py
-    - matplotlib
+    - matplotlib-base
     - networkx
     - numpy
     - pyyaml
