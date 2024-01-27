@@ -1,3 +1,5 @@
+set -x
+find $SP_DIR/$PKG_NAME -type f
 waves docs --print-local-path
 waves fetch tutorials --destination waves_tutorials
 modsim_template_directory="modsim_template_directory"
