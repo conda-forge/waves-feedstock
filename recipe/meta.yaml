@@ -1,5 +1,5 @@
 {% set name = "waves" %}
-{% set version = "0.7.3" %}
+{% set version = "0.7.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lanl/waves/archive/refs/tags/{{ version }}.tar.gz
-  sha256: a58d12f61beedc0d99ce34b68aca3af01820a01a59011cde72d4a4c2b1c8e0bc
+  sha256: c71fe58f0695f5e469d4f4943483b15187d5d08ffb1c6afd4357df8d0c9a6cd3
 
 build:
   noarch: python
@@ -15,6 +15,9 @@ build:
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
+    # TODO: Remove when WAVES MANIFEST.in has been updated
+    - echo "recursive-include waves/modsim_template *" >> MANIFEST.in
+    - echo "recursive-include waves/tutorials *" >> MANIFEST.in
     - $PYTHON -m build --no-isolation
     - $PYTHON -m pip install dist/$PKG_NAME-$PKG_VERSION.tar.gz --no-deps --ignore-installed -v --no-build-isolation
     - scons man html
