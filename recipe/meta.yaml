@@ -15,9 +15,6 @@ build:
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
-    # TODO: Remove when WAVES MANIFEST.in has been updated
-    - echo "recursive-include waves/modsim_template *" >> MANIFEST.in
-    - echo "recursive-include waves/tutorials *" >> MANIFEST.in
     - $PYTHON -m build --no-isolation
     - $PYTHON -m pip install dist/$PKG_NAME-$PKG_VERSION.tar.gz --no-deps --ignore-installed -v --no-build-isolation
     - scons man html
@@ -33,13 +30,13 @@ requirements:
     - sphinx-copybutton >=0.5.1
     - sphinx_rtd_theme >=1
     - sphinxcontrib-bibtex
-    - setuptools_scm[toml] >=6.2,<8
+    - setuptools_scm[toml] >=6.2
   host:
     - python
     - python-build
     - pip
     - setuptools >=62
-    - setuptools_scm[toml] >=6.2,<8
+    - setuptools_scm[toml] >=6.2
   run:
     - python >=3.8
     - h5netcdf
