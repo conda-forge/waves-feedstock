@@ -1,5 +1,5 @@
 {% set name = "waves" %}
-{% set version = "0.7.10" %}
+{% set version = "0.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lanl/waves/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 2faba24ae0be4fd4037179d0f73ca7729c8c44c1776a71f60cb416091375b1de
+  sha256: 294bdd214bef46479610d39ba045cb2aaacf8a47483f3317b4723d487eb65d81
 
 build:
   noarch: python
@@ -30,13 +30,13 @@ requirements:
     - sphinx-copybutton >=0.5.1
     - sphinx_rtd_theme >=1
     - sphinxcontrib-bibtex
-    - setuptools_scm[toml] >=6.2,<8
+    - setuptools_scm[toml] >=6.2
   host:
     - python
     - python-build
     - pip
     - setuptools >=62
-    - setuptools_scm[toml] >=6.2,<8
+    - setuptools_scm[toml] >=6.2
   run:
     - python >=3.8
     - h5netcdf
