@@ -3,15 +3,15 @@ About waves-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/waves-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/lanl/waves
+Home: https://github.com/lanl-aea/waves
 
 Package license: BSD-3-Clause
 
 Summary: Parameteric study computational engineering workflow tool
 
-Development: https://github.com/lanl/waves
+Development: https://github.com/lanl-aea/waves
 
-Documentation: https://lanl.github.io/waves/index.html
+Documentation: https://lanl-aea.github.io/waves/index.html
 
 WAVES (LANL code C23004) is a computational engineering workflow tool that integrates parametric studies with
 traditional software build systems.
