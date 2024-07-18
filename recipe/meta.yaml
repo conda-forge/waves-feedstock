@@ -1,13 +1,13 @@
 {% set name = "waves" %}
-{% set version = "0.8.4" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/lanl/waves/archive/refs/tags/{{ version }}.tar.gz
-  sha256: d53bbd7b1f93e0049caabe5b61f04df1ef5704c70c1a375e6d8f1274b33e33f1
+  url: https://github.com/lanl-aea/waves/archive/refs/tags/{{ version }}.tar.gz
+  sha256: d440b169486550ba28a4545aa08469b09e79a90a2b114d928d8952ef8aaa9a1d
 
 build:
   noarch: python
@@ -25,7 +25,7 @@ build:
 requirements:
   build:
     - scons >=4
-    - sphinx >=5.1
+    - sphinx >=7.1
     - sphinx-argparse
     - sphinx-copybutton >=0.5.1
     - sphinx_rtd_theme >=1
@@ -58,15 +58,15 @@ test:
     - waves
 
 about:
-  home: https://github.com/lanl/waves
+  home: https://github.com/lanl-aea/waves
   license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: Parameteric study computational engineering workflow tool
   description: |
     WAVES (LANL code C23004) is a computational engineering workflow tool that integrates parametric studies with
     traditional software build systems.
-  doc_url: https://lanl.github.io/waves/index.html
-  dev_url: https://github.com/lanl/waves
+  doc_url: https://lanl-aea.github.io/waves/index.html
+  dev_url: https://github.com/lanl-aea/waves
 
 extra:
   recipe-maintainers:
