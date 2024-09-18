@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lanl-aea/waves/archive/refs/tags/{{ version }}.tar.gz
-  sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  sha256: e06ac9ca37e430512dec8d11cec8b47146d551ddd94a960d40ec9e02b2a49d37
 
 build:
   noarch: python
