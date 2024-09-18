@@ -17,11 +17,6 @@ build:
   entry_points:
     - odb_extract = waves._abaqus.odb_extract:main
     - waves = waves._main:main
-  script:
-    - $PYTHON -m build --no-isolation
-    - $PYTHON -m pip install dist/$PKG_NAME-$PKG_VERSION.tar.gz --no-deps --ignore-installed -v --no-build-isolation
-    - scons man html
-    - $PYTHON package_documentation.py
   ignore_run_exports:
     - python_abi
 
