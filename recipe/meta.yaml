@@ -1,5 +1,5 @@
 {% set name = "waves" %}
-{% set version = "0.9.4" %}
+{% set version = "0.9.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,18 +7,16 @@ package:
 
 source:
   url: https://github.com/lanl-aea/waves/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 4ea2dfea5af1425fd9e3e5a29e8324fdf923e9cddaef208b46b819aa99a99f15
+  sha256: e06ac9ca37e430512dec8d11cec8b47146d551ddd94a960d40ec9e02b2a49d37
 
 build:
   noarch: python
   number: 0
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  script:
-    - $PYTHON -m build --no-isolation
-    - $PYTHON -m pip install dist/$PKG_NAME-$PKG_VERSION.tar.gz --no-deps --ignore-installed -v --no-build-isolation
-    - scons man html
-    - $PYTHON package_documentation.py
+  entry_points:
+    - odb_extract = waves._abaqus.odb_extract:main
+    - waves = waves._main:main
   ignore_run_exports:
     - python_abi
 
