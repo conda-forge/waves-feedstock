@@ -17,24 +17,20 @@ build:
   entry_points:
     - odb_extract = waves._abaqus.odb_extract:main
     - waves = waves._main:main
-  ignore_run_exports:
-    - python_abi
 
 requirements:
-  build:
-    - scons >=4
+  host:
+    - python
+    - python-build
+    - pip
+    - scons >=4.6
+    - setuptools >=64
+    - setuptools_scm >=8
     - sphinx >=7.1
     - sphinx-argparse
     - sphinx-copybutton >=0.5.1
     - sphinx_rtd_theme >=1
     - sphinxcontrib-bibtex
-    - setuptools_scm >=8
-  host:
-    - python
-    - python-build
-    - pip
-    - setuptools >=64
-    - setuptools_scm >=8
   run:
     - python >=3.8
     - h5netcdf
@@ -45,11 +41,12 @@ requirements:
     - pyyaml
     - salib >=1
     - scipy >=1.7
-    - scons
+    - scons >=4
     - xarray
 
 test:
   requires:
+    - pip
     - pytest
     - pytest-xdist
   imports:
