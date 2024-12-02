@@ -1,5 +1,5 @@
 {% set name = "waves" %}
-{% set version = "0.12.0" %}
+{% set version = "0.12.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lanl-aea/waves/archive/refs/tags/{{ version }}.tar.gz
-  sha256: b047f90034fd79b3b671704c5df2f4e569138ff35dfd5820a25f6ece1f88a7bd
+  sha256: 8af5c9e6f2ee042dfb783fd6e13779051b12f4e28320e91f359f916b7c933ffb
 
 build:
   noarch: python
@@ -29,7 +29,8 @@ requirements:
     - sphinx >=7.1
     - sphinx-argparse
     - sphinx-copybutton >=0.5.1
-    - sphinx_rtd_theme >=1
+    - sphinx-book-theme
+    - sphinx-design
     - sphinxcontrib-bibtex
   run:
     - python >=3.9
