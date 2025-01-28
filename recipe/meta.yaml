@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   entry_points:
@@ -20,7 +20,7 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - python-build
     - pip
     - scons >=4.6
@@ -33,7 +33,7 @@ requirements:
     - sphinx-design
     - sphinxcontrib-bibtex
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - h5netcdf
     - h5py
     - matplotlib-base
@@ -50,6 +50,7 @@ test:
     - pip
     - pytest>=6
     - pytest-xdist
+    - python {{ python_min }}
   imports:
     - waves
 
