@@ -7,14 +7,14 @@ Home: https://github.com/lanl-aea/waves
 
 Package license: BSD-3-Clause
 
-Summary: Parameteric study computational engineering workflow tool
+Summary: Computational science and engineering parameteric study workflows
 
 Development: https://github.com/lanl-aea/waves
 
 Documentation: https://lanl-aea.github.io/waves/index.html
 
-WAVES (LANL code C23004) is a computational engineering workflow tool that integrates parametric studies with
-traditional software build systems.
+WAVES (LANL code C23004) is a computational science and engineering workflow tool that integrates parametric studies
+with traditional software build systems.
 
 
 Current build status
