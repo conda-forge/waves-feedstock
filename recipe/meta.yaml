@@ -48,7 +48,7 @@ requirements:
 test:
   requires:
     - pip
-    - pytest>=6
+    - pytest >=6
     - pytest-xdist
     - sphinx >=7.1
     - sphinx-argparse
