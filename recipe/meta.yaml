@@ -1,5 +1,5 @@
 {% set name = "waves" %}
-{% set version = "0.12.8" %}
+{% set version = "0.13.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,16 @@ package:
 
 source:
   url: https://github.com/lanl-aea/waves/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 6055b4e92075c0168bf9d85b75375f2f40fa37cd3be2dce80a9b304f3523dc81
+  sha256: 3d776ebd07d05e7de8704e4491864336cab4ee23c284106056a805bf7561435a
 
 build:
   noarch: python
   number: 0
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+  script:
+    - scons install --prefix=${PREFIX}  # [unix]
+    - scons install --prefix=%PREFIX%  # [win]
   entry_points:
     - odb_extract = waves._abaqus.odb_extract:main
     - waves = waves._main:main
@@ -40,7 +43,7 @@ requirements:
     - networkx
     - numpy
     - pyyaml
-    - salib >=1
+    - salib >=1.4.6
     - scipy >=1.7
     - scons >=4
     - xarray
