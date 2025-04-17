@@ -14,6 +14,9 @@ build:
   number: 0
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+  script:
+    - scons install --prefix=${PREFIX}  # [unix]
+    - scons install --prefix=%PREFIX%  # [win]
   entry_points:
     - odb_extract = waves._abaqus.odb_extract:main
     - waves = waves._main:main
@@ -40,7 +43,7 @@ requirements:
     - networkx
     - numpy
     - pyyaml
-    - salib >=1
+    - salib >=1.4.6
     - scipy >=1.7
     - scons >=4
     - xarray
