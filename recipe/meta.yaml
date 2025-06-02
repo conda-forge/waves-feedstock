@@ -24,17 +24,26 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - python-build
+    - h5netcdf
+    - h5py
+    - matplotlib-base
+    - networkx
+    - numpy
     - pip
+    - python-build
+    - pyyaml
+    - salib >=1.4.6
+    - scipy >=1.7
     - scons >=4.6
-    - setuptools >=64
+    - setuptools >=77
     - setuptools_scm >=8
     - sphinx >=7.1
     - sphinx-argparse
-    - sphinx-copybutton >=0.5.1
     - sphinx-book-theme
+    - sphinx-copybutton >=0.5.1
     - sphinx-design
     - sphinxcontrib-bibtex
+    - xarray
   run:
     - python >={{ python_min }}
     - h5netcdf
