@@ -1,5 +1,6 @@
 {% set name = "waves" %}
 {% set version = "0.13.6" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
