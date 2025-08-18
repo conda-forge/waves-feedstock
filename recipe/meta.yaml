@@ -1,5 +1,5 @@
 {% set name = "waves" %}
-{% set version = "0.13.9" %}
+{% set version = "0.13.12" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/lanl-aea/waves/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 820020efbbb79565269838f229f92ecde0d85981e4a63f16ea67259d53794029
+  sha256: 4f27f151b9e826bdaafee317748ecec549d2a5673efb1aa6735736152ff9899d
 
 build:
   noarch: python
