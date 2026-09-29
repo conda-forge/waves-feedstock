@@ -16,7 +16,6 @@ Documentation: https://lanl-aea.github.io/waves/index.html
 WAVES (LANL code C23004) is a computational science and engineering workflow tool that integrates parametric studies
 with traditional software build systems.
 
-
 Current build status
 ====================
 
