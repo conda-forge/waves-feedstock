@@ -77,7 +77,7 @@ tests:
         then: ./run_test.bat
     requirements:
       run:
-        - python {{ python_min }}
+        - python ${{ python_min }}
         - pytest >=6
         - pytest-xdist
         - sphinx >=7.1
