@@ -2,8 +2,7 @@ schema_version: 1
 
 context:
   name: waves
-  version: 1.5.4
-  python_min: 3.10
+  version: 1.5.5
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +10,7 @@ package:
 
 source:
   url: https://github.com/lanl-aea/waves/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 22277074fd7ae3ba1c8d2310a95833762f723d08869fd14a343bc6c46e4b6b85
+  sha256: b10806fc84cf833a38ea79b96f520d8a4c9b1ad81c20e832f695e3f77f2c3ad0
 
 build:
   number: 0
@@ -34,7 +33,7 @@ build:
 
 requirements:
   host:
-    - python >=${{ python_min }}
+    - python ${{ python_min }}.*
     - h5netcdf
     - h5py
     - matplotlib-base
@@ -65,7 +64,7 @@ requirements:
     - pyyaml
     - salib >=1.4.6
     - scipy >=1.7
-    - scons >=4
+    - scons >=4.6
     - xarray >=2024.10.0
 
 tests:
@@ -73,15 +72,17 @@ tests:
       imports:
         - waves
       pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - script:
       - if: unix
-        # FIXME: Remove ``|| true`` after older versions are deployed and when WAVES package version is current
-        then: ./run_test.sh || true
+        then: ./run_test.sh
       - if: win
         then: ./run_test.bat
     requirements:
       run:
-        - python =${{ python_min }}
+        - python ${{ python_min }}.*
         - pytest >=6
         - pytest-xdist
         - sphinx >=7.1

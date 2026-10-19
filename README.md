@@ -7,7 +7,7 @@ Home: https://github.com/lanl-aea/waves
 
 Package license: BSD-3-Clause
 
-Summary: Computational science and engineering parameteric study workflows
+Summary: Computational science and engineering parametric study workflows
 
 Development: https://github.com/lanl-aea/waves
 
