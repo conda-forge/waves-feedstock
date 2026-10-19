@@ -65,7 +65,7 @@ requirements:
     - pyyaml
     - salib >=1.4.6
     - scipy >=1.7
-    - scons >=4
+    - scons >=4.6
     - xarray >=2024.10.0
 
 tests:
@@ -75,8 +75,7 @@ tests:
       pip_check: true
   - script:
       - if: unix
-        # FIXME: Remove ``|| true`` after older versions are deployed and when WAVES package version is current
-        then: ./run_test.sh || true
+        then: ./run_test.sh
       - if: win
         then: ./run_test.bat
     requirements:
