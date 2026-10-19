@@ -33,7 +33,7 @@ build:
 
 requirements:
   host:
-    - python >=${{ python_min }}
+    - python ${{ python_min }}.*
     - h5netcdf
     - h5py
     - matplotlib-base
@@ -72,6 +72,9 @@ tests:
       imports:
         - waves
       pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - script:
       - if: unix
         then: ./run_test.sh
